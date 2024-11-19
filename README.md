@@ -1,4 +1,5 @@
 # Firebase Authentication Entegrasyonu
+![Project Image](assets/image/Ekran%20görüntüsü%202024-11-19%20133224.png)
 
 ## **Firebase Projesi Oluşturma**
 
