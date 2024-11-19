@@ -1,62 +1,63 @@
-# Firebase Authentication Entegrasyonu
+# Firebase Authentication Integration
 ![Project Image](assets/image/Ekran%20görüntüsü%202024-11-19%20133224.png)
 
-## **Firebase Projesi Oluşturma**
+## **Creating a Firebase Project**
 
-1. **Firebase Console’a Giriş Yapma**  
-   [Firebase Console](https://console.firebase.google.com/) adresine gidiyoruz.
+1. **Logging into Firebase Console**  
+   Go to the [Firebase Console](https://console.firebase.google.com/).
 
-2. **Yeni Proje Oluşturma**  
-   Firebase Console ana sayfasında, sağ üst köşede bulunan **"Add Project"** (Proje Ekle) butonuna tıklıyoruz. Ardından, karşımıza çıkan adımları takip ederek yeni bir proje oluşturuyoruz. Proje adı ve diğer gerekli bilgileri girerek işlemi tamamlıyoruz.
+2. **Creating a New Project**  
+   On the Firebase Console homepage, click the **"Add Project"** button in the top right corner. Then, follow the steps that appear to create a new project. Complete the process by entering the project name and other required information.
 
-3. **Firebase Projesinin Hazırlanması**  
-   Projemiz oluşturulduktan sonra, Firebase Console'da yeni projemiz aktif hale gelecektir.
+3. **Setting Up the Firebase Project**  
+   Once the project is created, it will be active in the Firebase Console.
 
-4. **Firebase Authentication Özelliğini Aktif Hale Getirme**  
-   Projemiz hazır olduktan sonra, sol menüde yer alan **Authentication** sekmesine tıklıyoruz. Ardından, **"Get Started"** (Başlayın) butonuna tıklayarak Authentication özelliğini aktifleştiriyoruz.
-
----
-
-## **Android Studio Projesini Firebase Projesine Bağlama**
-
-1. **Firebase Sekmesine Tıklama**  
-   Android Studio içinde, üst menüde bulunan **Firebase** sekmesine tıklıyoruz.
-
-2. **Authentication Sekmesine Erişim**  
-   Sol menüde yer alan **Authentication** sekmesine tıklıyoruz. Bu, Firebase Authentication hizmetini proje ile entegre etmek için gerekli ayarları yapmamıza olanak sağlar.
-
-3. **Custom Authentication Sistemi Seçimi**  
-   Authentication sekmesinin altında bulunan alt seçeneklerden **Authenticate using a custom authentication system** kısmına tıklıyoruz.
-
-4. **Firebase’e Bağlanma**  
-   Karşımıza çıkan pencerede, **Connect to Firebase** butonuna tıklıyoruz. Bu adım, Android Studio projemizi Firebase projemize bağlamamıza olanak tanır.
-
-5. **SDK’yı Projeye Ekleme**  
-   Firebase ile bağlantı kurduktan sonra, **Add the Firebase Authentication SDK to your project** seçeneğini tıklıyoruz. Bu, gerekli Firebase Authentication bağımlılıklarını projemize ekleyecektir.
-
-6. **Değişiklikleri Kabul Etme**  
-   Bağımlılıkları ekledikten sonra, **Accept Changes** seçeneğine tıklayarak, gerekli yapılandırma ve dosya değişikliklerini onaylıyoruz.
-
-7. **Firebase Console’a Giriş**  
-   Firebase Console’a gidiyoruz ve proje üzerinde çalışmaya devam ediyoruz.
-
-8. **Authentication Ayarlarını Yapma**  
-   Firebase Console’da, sol menüden **Authentication** sekmesine tıklıyoruz ve ardından **Sign-in method** kısmına geliyoruz.
-
-9. **E-posta ve Şifre ile Giriş Yapmayı Etkinleştirme**  
-   **Sign-in method** altında **Email/Password** seçeneğini aktif hale getiriyoruz. Bu sayede kullanıcılar, e-posta ve şifre kullanarak uygulamaya giriş yapabilecekler.
+4. **Enabling Firebase Authentication**  
+   After setting up the project, click on the **Authentication** tab in the left menu. Then, click the **"Get Started"** button to enable the Authentication feature.
 
 ---
 
-## **Firebase Authentication Yapılandırması**
+## **Linking Android Studio Project to Firebase Project**
 
-![Firebase Authentication]("Ekran görüntüsü 2024-11-19 133224.png")
+1. **Clicking on Firebase Tab**  
+   In Android Studio, click on the **Firebase** tab in the top menu.
 
-### AuthViewModel Sınıfı
+2. **Accessing the Authentication Tab**  
+   Click on the **Authentication** tab in the left menu. This allows us to configure the necessary settings to integrate Firebase Authentication with the project.
 
-Firebase Authentication ile kullanıcı işlemlerini yönetmek için bir `AuthViewModel` sınıfı oluşturuyoruz. Bu sınıf, kullanıcıların kayıt olma, giriş yapma ve şifre sıfırlama işlemlerini yönetir.
+3. **Choosing Custom Authentication System**  
+   Under the Authentication section, click on **Authenticate using a custom authentication system**.
 
-Örnek bir kullanıcı kaydı fonksiyonu:
+4. **Connecting to Firebase**  
+   In the window that appears, click the **Connect to Firebase** button. This step will link your Android Studio project with your Firebase project.
+
+5. **Adding the SDK to the Project**  
+   After connecting to Firebase, click on **Add the Firebase Authentication SDK to your project**. This will add the required Firebase Authentication dependencies to your project.
+
+6. **Accepting Changes**  
+   After adding the dependencies, click on **Accept Changes** to confirm the necessary configurations and file changes.
+
+7. **Logging into Firebase Console**  
+   Go to the Firebase Console and continue working on your project.
+
+8. **Configuring Authentication Settings**  
+   In the Firebase Console, click on the **Authentication** tab from the left menu and then go to the **Sign-in method** section.
+
+9. **Enabling Email/Password Authentication**  
+   Under the **Sign-in method** section, enable the **Email/Password** option. This will allow users to log into the application using their email and password.
+
+
+---
+
+
+## **Firebase Authentication Configuration**
+
+
+### AuthViewModel Class
+
+We create an `AuthViewModel` class to manage user operations with Firebase Authentication. This class handles user registration, login, and password reset processes.
+
+Example of a user registration function:
 
 ```
 fun registerUser(email: String, password: String) {
@@ -74,9 +75,9 @@ fun registerUser(email: String, password: String) {
 ```
 ---
 
-###  **Firebase AuthState Sınıfı**
+### **Firebase AuthState Class**
 
-Kullanıcı işlemleri sırasında farklı durumları kontrol etmek için bir `AuthState` sınıfı tanımlıyoruz. Bu sınıf, işlem sırasında başarılı, hata veya yükleniyor durumlarını yönetir.
+We define an `AuthState` class to track different states during user operations. This class manages states such as success, error, or loading during the process.
 
 ```
 sealed class AuthState {
@@ -87,11 +88,11 @@ sealed class AuthState {
 }
 ```
 
-## Kullanıcı Kayıt ve Giriş Ekranı
+## User Registration and Login Screen
 
-Kullanıcı kaydını ve giriş işlemlerini yapmak için örnek bir ekran yapısı kullanabilirsiniz. Kullanıcıdan e-posta ve şifre alarak Firebase Authentication API'sini çağırıyoruz.
+You can use an example screen structure to handle user registration and login. We call the Firebase Authentication API by taking the user's email and password.
 
-### Kayıt Sayfası Kod Örneği
+### Register Page Code Example
 
 ```kotlin
 @Composable
@@ -132,7 +133,7 @@ fun RegisterPage(authViewModel: AuthViewModel, navController: NavController) {
             Text("Kayıt Ol")
         }
         
-        // Durum Kontrolü (Yükleniyor, Başarılı, Hata)
+       
         when (authState) {
             is AuthState.Loading -> CircularProgressIndicator()
             is AuthState.Success -> {
@@ -149,6 +150,7 @@ fun RegisterPage(authViewModel: AuthViewModel, navController: NavController) {
 }
 ```
 
-## Firebase Authentication'a Bağlantı Testi
+## Testing the Connection to Firebase Authentication
 
-Firebase Authentication işlevselliğinin doğru çalıştığını test etmek için kayıt ve giriş işlemlerini gerçekleştirebilirsiniz. Firebase Console üzerinden kullanıcılarınızın durumu ve işlem sonuçlarını izleyebilirsiniz.
+You can test the functionality of Firebase Authentication by performing registration and login operations. You can monitor the status of your users and the results of the operations through the Firebase Console.
+
